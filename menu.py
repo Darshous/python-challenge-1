@@ -136,12 +136,12 @@ while place_order:
                 if menu_selection in menu_items:
                     # Store the item name as a variable
                     item_name = menu_items[menu_selection]["Item name"]
-                    item_price = menu_items[menu_selection]["Item price"]
+                    item_price = menu_items[menu_selection]["Price"]
                     # Ask the customer for the quantity of the menu item
                     quantity = input(f"How many {item_name}s would you like? ")
                     # Check if the quantity is a number, default to 1 if not
                     if not quantity.isdigit():
-                        print("Selection not valid! Default = 1")
+                        print("Selection not valid! Default = 1 ")
                         quantity = 1
                     else:
                         quantity = int(quantity)
@@ -158,7 +158,7 @@ while place_order:
                     print("You did not select a menu option. ")
         else:
             # Tell the customer they didn't select a menu option
-            print(f"{menu_category} was not a menu option.")
+            print(f"{menu_category} was not a menu option. ")
     else:
         # Tell the customer they didn't select a number
         print("You didn't select a number.")
@@ -172,23 +172,24 @@ while place_order:
         match keep_ordering:
             case "y":
                 # Keep ordering
-        continue
+                continue
         # Exit the keep ordering question loop
-    elif keep_ordering = "n":
-        # Complete the order
-
+            case "n":
+                # Complete the order
+                place_order = False
+        # Exit the keep ordering question loop
         # Since the customer decided to stop ordering, thank them for
         # their order
-
-        # Exit the keep ordering question loop
-
+                print("Thank you for your order! ")
+                break
         # Tell the customer to try again
-
+            case _:
+                print("Please try again. Press 'Y' for yes or 'N' for no.")
         # Print out the customer's order
 print("This is what we are preparing for you.\n")
 
 # Uncomment the following line to check the structure of the order
-# print(order)
+print(order_list)
 
 print("Item name                 | Price  | Quantity")
 print("--------------------------|--------|----------")
@@ -198,11 +199,11 @@ for order in order_list:
     # 7. Store the dictionary items as variables
     item_name = order["Item name"]
 price = order["Price"]
-quantity = order["quantity"]
+quantity = order["Quantity"]
 # 8. Calculate the number of spaces for formatted printing
 item_name_spaces = 24 - len(item_name)
-price_spaces = 7 - len(f"{price:.2f}")
-quantity_spaces = 7 - len(str(quantity))
+price_spaces = 8 - len(f"{price:.2f}")
+quantity_spaces = 8 - len(str(quantity))
 # 9. Create space strings
 item_name_space_str = " " * item_name_spaces
 price_space_str = " " * price_spaces
