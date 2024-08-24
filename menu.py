@@ -208,5 +208,4 @@ print(f"{item_name}{item_name_space_str} | ${price:.2f}{price_space_str} | {quan
 # and print the prices.
 total_cost = sum([order["Price"] * order["Quantity"] for order in order_list])
 
-print(
-    f"/nTotal cost of your order: ${total_cost: .2f}{price_space_str} | {quantity}{quantity_spaces_str}")
+print(f"\nTotal cost of your order: #{total_cost:.2f}")
