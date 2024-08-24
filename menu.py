@@ -52,7 +52,7 @@ menu = {
 
 # 1. Set up order list. Order list will store a list of dictionaries for
 # menu item name, item price, and quantity ordered
-Order_List = []
+order_list = []
 
 # Launch the store and present a greeting to the customer
 print("Welcome to the variety food truck.")
@@ -137,9 +137,9 @@ while place_order:
                         print("Selection not valid! Default = 1")
                         quantity = 1
                     else:
-                        quanity = int(quantity)
+                        quantity = int(quantity)
                     # Add the item name, price, and quantity to the order list
-                    Order_List.append({
+                    order_list.append({
                         "Item name": item_name,
                         "Price": item_price,
                         "Quantity": quantity
@@ -187,21 +187,27 @@ print("Item name                 | Price  | Quantity")
 print("--------------------------|--------|----------")
 
 # 6. Loop through the items in the customer's order
-for order in Order_List:
+for order in order_list:
     # 7. Store the dictionary items as variables
     item_name = order["Item name"]
 price = order["Price"]
-quanity = order["Quanity"]
+quantity = order["quantity"]
 # 8. Calculate the number of spaces for formatted printing
 item_name_spaces = 24 - len(item_name)
 price_spaces = 7 - len(f"{price:.2f}")
-quantity_spaces = 7 - len(str(quanity))
+quantity_spaces = 7 - len(str(quantity))
 # 9. Create space strings
 item_name_space_str = " " * item_name_spaces
 price_space_str = " " * price_spaces
+quantity_spaces_str = " " * quantity_spaces
 # 10. Print the item name, price, and quantity
+print(f"{item_name}{item_name_space_str} | ${price:.2f}{price_space_str} | {quantity_spaces_str}")
 
 
 # 11. Calculate the cost of the order using list comprehension
 # Multiply the price by quantity for each item in the order list, then sum()
 # and print the prices.
+total_cost = sum([order["Price"] * order["Quantity"] for order in order_list])
+
+print(
+    f"/nTotal cost of your order: ${total_cost: .2f}{price_space_str} | {quantity}{quantity_spaces_str}")
