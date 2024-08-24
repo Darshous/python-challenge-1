@@ -172,7 +172,7 @@ while place_order:
         match keep_ordering:
             case "y":
                 # Keep ordering
-                continue
+                break
         # Exit the keep ordering question loop
             case "n":
                 # Complete the order
@@ -186,34 +186,38 @@ while place_order:
             case _:
                 print("Please try again. Press 'Y' for yes or 'N' for no.")
         # Print out the customer's order
-print("This is what we are preparing for you.\n")
+print("\nThis is what we are preparing for you.\n")
 
 # Uncomment the following line to check the structure of the order
-print(order_list)
-
-print("Item name                 | Price  | Quantity")
-print("--------------------------|--------|----------")
+# print(order_list)
+# Modified next two lines to align with the print output of the order_list
+print("Item name                    |  Price  | Quantity")
+print("-----------------------------|---------|---------")
 
 # 6. Loop through the items in the customer's order
 for order in order_list:
     # 7. Store the dictionary items as variables
     item_name = order["Item name"]
-price = order["Price"]
-quantity = order["Quantity"]
+    price = order["Price"]
+    quantity = order["Quantity"]
 # 8. Calculate the number of spaces for formatted printing
 item_name_spaces = 24 - len(item_name)
 price_spaces = 8 - len(f"{price:.2f}")
-quantity_spaces = 8 - len(str(quantity))
+quantity_spaces = 6 - len(str(quantity))
 # 9. Create space strings
 item_name_space_str = " " * item_name_spaces
 price_space_str = " " * price_spaces
 quantity_spaces_str = " " * quantity_spaces
 # 10. Print the item name, price, and quantity
-print(f"{item_name}{item_name_space_str} | ${price:.2f}{price_space_str} | {quantity_spaces_str}")
-
+# (my problem code) print(f"{item_name}{item_name_space_str} | ${price:.2f}{price_space_str} | {quantity_spaces_str}")
+# GPT solution
+print(f"{item_name:<28} | ${price:>6.2f} | {quantity:>8}")
 # 11. Calculate the cost of the order using list comprehension
 # Multiply the price by quantity for each item in the order list, then sum()
 # and print the prices.
 total_cost = sum([order["Price"] * order["Quantity"] for order in order_list])
 
-print(f"\nTotal cost of your order: #{total_cost:.2f}")
+# my code print(f"\nTotal cost of your order: #{total_cost:.2f}")
+# GPT Suggested code
+print("-" * 49)
+print(f"[{'Total cost of your order: ' :<27} | ${total_cost:>6.2f} |")
