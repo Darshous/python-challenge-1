@@ -1,3 +1,9 @@
+# Error notes for use in future program referene
+# 3 levels of errors
+# Minor: text based errors that may reduce users experience
+# Major: will negatively impact the program
+# Critical: will crash the program
+
 # Menu dictionary
 menu = {
     "Snacks": {
@@ -91,7 +97,8 @@ while place_order:
             print(f"You selected {menu_category_name}")
 
             # Print out the menu options from the menu_category_name
-            print(f"What {menu_category_name} item would you like to order?")
+            # Minor error note: Remember to put a space after the .or? before the end quote
+            print(f"What {menu_category_name} item would you like to order? ")
             i = 1
             menu_items = {}
             print("Item # | Item name                | Price")
@@ -165,7 +172,7 @@ while place_order:
         match keep_ordering:
             case "y":
                 # Keep ordering
-            continue
+        continue
         # Exit the keep ordering question loop
     elif keep_ordering = "n":
         # Complete the order
