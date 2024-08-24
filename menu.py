@@ -165,7 +165,7 @@ while place_order:
         match keep_ordering:
             case "y":
                 # Keep ordering
-        continue
+            continue
         # Exit the keep ordering question loop
     elif keep_ordering = "n":
         # Complete the order
@@ -202,7 +202,6 @@ price_space_str = " " * price_spaces
 quantity_spaces_str = " " * quantity_spaces
 # 10. Print the item name, price, and quantity
 print(f"{item_name}{item_name_space_str} | ${price:.2f}{price_space_str} | {quantity_spaces_str}")
-
 
 # 11. Calculate the cost of the order using list comprehension
 # Multiply the price by quantity for each item in the order list, then sum()
