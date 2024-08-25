@@ -1,4 +1,4 @@
-# Python-challenge-1
+# Python-Challenge-1
 
 # Order Management System
 
@@ -64,11 +64,10 @@ Item name                    |  Price  | Quantity
 Teriyaki Chicken             |   $9.99 |        2
 -------------------------------------------------
 Total cost of your order:     |  $19.98
+```
 
 
-
-
-#### Contributions of code from the following sources noted in program comments:
--https://www.youtube.com/watch?v=Tzv3f8eEQdM
--https://www.youtube.com/watch?v=vhlrICrPE1s
--https://www.chatgpt.com
+### Code contributions note in program comments:
+- https://www.youtube.com/watch?v=Tzv3f8eEQdM
+- https://www.youtube.com/watch?v=vhlrICrPE1s
+- https://www.chatgpt.com
