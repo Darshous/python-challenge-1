@@ -67,7 +67,7 @@ Total cost of your order:     |  $19.98
 ```
 
 
-### Code contributions note in program comments:
-- https://www.youtube.com/watch?v=Tzv3f8eEQdM
-- https://www.youtube.com/watch?v=vhlrICrPE1s
+### **Code contributions note in program comments:**
+- (Brenden Metcalfe) https://www.youtube.com/watch?v=Tzv3f8eEQdM
+- (Dario Radecic) https://www.youtube.com/watch?v=vhlrICrPE1s
 - https://www.chatgpt.com
