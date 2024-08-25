@@ -136,7 +136,7 @@ while place_order:
                 if menu_selection in menu_items:
                     # Store the item name as a variable
                     item_name = menu_items[menu_selection]["Item name"]
-                    item_price = menu_items[menu_selection]["Price"]
+                    item_price = float(menu_items[menu_selection]["Price"])
                     # Ask the customer for the quantity of the menu item
                     quantity = input(f"How many {item_name}s would you like? ")
                     # Check if the quantity is a number, default to 1 if not
@@ -161,7 +161,7 @@ while place_order:
             print(f"{menu_category} was not a menu option. ")
     else:
         # Tell the customer they didn't select a number
-        print("You didn't select a number.")
+        print("You did not select a number.")
 
     while True:
         # Ask the customer if they would like to order anything else
@@ -180,7 +180,7 @@ while place_order:
         # Exit the keep ordering question loop
         # Since the customer decided to stop ordering, thank them for
         # their order
-                print("Thank you for your order! ")
+                print("\nThank you for your order!\n")
                 break
         # Tell the customer to try again
             case _:
@@ -201,17 +201,27 @@ for order in order_list:
     price = order["Price"]
     quantity = order["Quantity"]
 # 8. Calculate the number of spaces for formatted printing
-item_name_spaces = 24 - len(item_name)
-price_spaces = 8 - len(f"{price:.2f}")
-quantity_spaces = 6 - len(str(quantity))
+    item_name_spaces = 24 - len(item_name)
+    price_spaces = 8 - len(f"{price:.2f}")
+    quantity_spaces = 6 - len(str(quantity))
 # 9. Create space strings
-item_name_space_str = " " * item_name_spaces
-price_space_str = " " * price_spaces
-quantity_spaces_str = " " * quantity_spaces
+    item_name_space_str = " " * item_name_spaces
+    price_space_str = " " * price_spaces
+    quantity_spaces_str = " " * quantity_spaces
 # 10. Print the item name, price, and quantity
-# (my problem code) print(f"{item_name}{item_name_space_str} | ${price:.2f}{price_space_str} | {quantity_spaces_str}")
+# my problem code - print(f"{item_name}{item_name_space_str} | ${price:.2f}{price_space_str} | {quantity_spaces_str}")
 # GPT solution
-print(f"{item_name:<28} | ${price:>6.2f} | {quantity:>8}")
+# print(*order_list, sep="\n")
+# order in range code https://www.youtube.com/watch?v=vhlrICrPE1s
+# for element in range(len(order_list)):
+# for i in range(len(order)):
+#    for j in order: https://www.youtube.com/watch?v=vhlrICrPE1s
+#       print(j[i], end=' |')
+# for i in order_list: https://www.youtube.com/watch?v=Tzv3f8eEQdM
+# print(f"{item_name}{item_name_space_str} | ${price:.2f}{price_space_str} | {quantity_spaces_str}{quantity}") GPT test code - is worse
+# MAJOR ERROR !!!!!!!!!! MAKE SURE THE PRINT FUNCTIONS AND INSTRUCTIONS ARE WITHIN THE LOOP!!!!!!!!!!
+    print(f"{item_name:<28} | ${price:>6.2f} | {quantity:>8}")
+
 # 11. Calculate the cost of the order using list comprehension
 # Multiply the price by quantity for each item in the order list, then sum()
 # and print the prices.
